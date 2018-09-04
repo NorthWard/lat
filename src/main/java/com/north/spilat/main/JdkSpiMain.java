@@ -5,7 +5,7 @@ import com.north.spilat.service.Search;
 import java.util.Iterator;
 import java.util.ServiceLoader;
 
-public class Main {
+public class JdkSpiMain {
 
     public static void main(String[] args) {
         System.out.println("Hello World!");
