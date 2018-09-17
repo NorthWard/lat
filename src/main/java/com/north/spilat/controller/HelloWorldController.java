@@ -3,6 +3,7 @@ package com.north.spilat.controller;
 import com.north.lat.service.SaveTheWorldService;
 import com.north.lat.service.impl.CommonSaveTheWorldServiceImpl;
 import com.north.lat.service.impl.HeroSaveTheWorldImpl;
+import com.north.spilat.service.DubboDemoService;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -17,6 +18,8 @@ public class HelloWorldController {
     private CommonSaveTheWorldServiceImpl commonSaveTheWorldService;
     @Resource
     private HeroSaveTheWorldImpl heroSaveTheWorld;
+    @Resource
+    private DubboDemoService dubboDemoService;
 
     private static final String HERO = "laihaohua";
 
@@ -28,6 +31,6 @@ public class HelloWorldController {
         }else {
             saveTheWorldService = commonSaveTheWorldService;
         }
-        return  saveTheWorldService.saveTheWorld(name);
+        return  saveTheWorldService.saveTheWorld(name) + dubboDemoService.test(name);
     }
 }

@@ -6,7 +6,7 @@
 
     <groupId>com.north.lat</groupId>
     <artifactId>spi-lat</artifactId>
-    <packaging>pom</packaging>
+    <packaging>jar</packaging>
     <version>1.0-SNAPSHOT</version>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -14,6 +14,10 @@
         <version>1.5.6.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
+    <properties>
+        <zookeeper.version>3.4.8</zookeeper.version>
+        <zkclient.version>0.8</zkclient.version>
+    </properties>
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -23,13 +27,11 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
-        <!--
-         <dependency>
+        <dependency>
                     <groupId>com.alibaba.spring.boot</groupId>
                     <artifactId>dubbo-spring-boot-starter</artifactId>
                     <version>2.0.0</version>
-          </dependency>
-          -->
+        </dependency>
         <dependency>
             <groupId>com.north.lat</groupId>
             <artifactId>niubility-spring-starter</artifactId>
@@ -39,6 +41,16 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>1.16.16</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.zookeeper</groupId>
+            <artifactId>zookeeper</artifactId>
+            <version>${zookeeper.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.101tec</groupId>
+            <artifactId>zkclient</artifactId>
+            <version>${zkclient.version}</version>
         </dependency>
     </dependencies>
     <build>
@@ -82,6 +94,12 @@
                 <configuration>
                     <mainClass>com.north.spilat.main.SpringBootMain</mainClass>
                 </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>sample.plugin</groupId>
+                <artifactId>hello-maven-plugin</artifactId>
+                <version>1.0-SNAPSHOT</version>
             </plugin>
         </plugins>
     </build>
