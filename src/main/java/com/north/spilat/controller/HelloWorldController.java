@@ -31,6 +31,7 @@ public class HelloWorldController {
         }else {
             saveTheWorldService = commonSaveTheWorldService;
         }
-        return  saveTheWorldService.saveTheWorld(name) + dubboDemoService.test(name);
+        dubboDemoService.test(name);
+        return  saveTheWorldService.saveTheWorld(name);
     }
 }
