@@ -6,7 +6,6 @@ import com.north.lat.service.impl.HeroSaveTheWorldImpl;
 import com.north.spilat.service.DubboDemoService;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
 import javax.annotation.Resource;
 
 /**
@@ -14,10 +13,10 @@ import javax.annotation.Resource;
  */
 @RestController
 public class HelloWorldController {
-    @Resource
+/*    @Resource
     private CommonSaveTheWorldServiceImpl commonSaveTheWorldService;
     @Resource
-    private HeroSaveTheWorldImpl heroSaveTheWorld;
+    private HeroSaveTheWorldImpl heroSaveTheWorld;*/
     @Resource
     private DubboDemoService dubboDemoService;
 
@@ -25,13 +24,13 @@ public class HelloWorldController {
 
     @RequestMapping("/saveTheWorld")
     public String index(String name) {
-        SaveTheWorldService saveTheWorldService;
+/*        SaveTheWorldService saveTheWorldService;
         if(HERO.equals(name)){
             saveTheWorldService = heroSaveTheWorld;
         }else {
             saveTheWorldService = commonSaveTheWorldService;
-        }
+        }*/
         dubboDemoService.test(name);
-        return  saveTheWorldService.saveTheWorld(name);
+        return  null;
     }
 }
